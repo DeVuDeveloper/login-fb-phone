@@ -1,29 +1,205 @@
-<h2>Sign up</h2>
+<div class="pt-2 bg-gray-800 flex flex-col sm:flex-col md:flex-col 
+    pl-0 h-screen pb-[152px] gap-[119px] mb-8">
+   
+    <header class="px-4 mt-4 flex text-white font-medium w-full justify-between">
+        <div class="h-8 w-[35px]">
+          <%= link_to root_path do %>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+            <svg width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 35 32" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path d="M 14.984 28.438 C 15.179 27.937 15.272 27.402 15.257 26.865 C
+                15.287 25.376 15.685 23.918 16.415 22.621 C 17.144 21.326 18.183
+                20.232 19.439 19.438 C 19.904 19.189 20.314 18.847 20.644 18.435
+                C 20.973 18.023 21.215 17.548 21.356 17.039 C 21.497 16.53
+                21.532 15.998 21.462 15.475 C 21.391 14.952 21.214 14.449 20.943
+                13.996 C 20.581 13.391 20.06 12.895 19.439 12.565 C 19.083
+                12.318 18.741 12.052 18.415 11.767 L 17.598 10.967 C 16.101
+                9.393 15.262 7.307 15.251 5.135 C 15.267 4.598 15.174 4.063
+                14.98 3.562 C 14.785 3.061 14.492 2.604 14.118 2.218 C 13.746
+                1.832 13.3 1.526 12.806 1.317 C 12.313 1.107 11.782 1 11.246 1 C
+                10.711 1.001 10.181 1.109 9.687 1.318 C 9.194 1.527 8.748 1.833
+                8.375 2.218 C 8.002 2.605 7.709 3.062 7.515 3.563 C 7.32 4.064
+                7.228 4.599 7.242 5.136 C 7.251 5.833 7.443 6.516 7.799 7.116 C
+                8.154 7.715 8.661 8.209 9.268 8.549 C 11.727 10.105 13.438 13.08
+                13.438 16.006 C 13.432 18.159 12.609 20.23 11.134 21.799 L 9.274
+                23.451 C 8.667 23.79 8.16 24.284 7.804 24.884 C 7.447 25.483
+                7.256 26.167 7.247 26.865 C 7.232 27.402 7.324 27.937 7.519
+                28.438 C 7.714 28.939 8.006 29.396 8.38 29.782 C 8.753 30.167
+                9.199 30.474 9.692 30.683 C 10.186 30.892 10.716 31 11.252 31 C
+                11.788 30.999 12.318 30.891 12.812 30.682 C 13.305 30.473 13.751
+                30.167 14.124 29.782 C 14.498 29.396 14.79 28.938 14.984 28.438
+                Z" fill="#6366F1" />
+              <path d="M 20.416 7.36 C 19.975 6.698 19.74 5.919 19.74 5.123 C
+                  19.741 4.057 20.163 3.034 20.915 2.278 C 21.569 1.62 22.431
+                  1.211 23.354 1.119 C 24.277 1.028 25.203 1.26 25.973 1.777 C
+                  26.633 2.22 27.147 2.848 27.449 3.583 C 27.752 4.318 27.831
+                  5.127 27.677 5.907 C 27.522 6.687 27.141 7.405 26.58 7.969 C
+                  26.022 8.532 25.308 8.916 24.53 9.071 C 23.753 9.227 22.946
+                  9.147 22.214 8.842 C 21.482 8.537 20.856 8.021 20.416 7.36 Z" fill="#6366F1" />
+              <path d="M 21.521 23.518 C 22.18 23.076 22.955 22.84 23.747 22.84
+                    V 22.838 C 24.274 22.839 24.795 22.943 25.281 23.146 C
+                    25.767 23.348 26.208 23.645 26.579 24.018 C 27.235 24.678
+                    27.643 25.544 27.734 26.47 C 27.825 27.396 27.594 28.325
+                    27.079 29.1 C 26.64 29.762 26.014 30.279 25.28 30.584 C
+                    24.548 30.889 23.742 30.969 22.964 30.813 C 22.187 30.658
+                    21.473 30.274 20.914 29.711 C 20.354 29.146 19.972 28.429
+                    19.818 27.649 C 19.663 26.868 19.742 26.06 20.045 25.324 C
+                    20.348 24.589 20.862 23.961 21.521 23.518 Z" fill="#6366F1" />
+              <path d="M 33.324 13.758 C 33.764 14.42 33.999 15.197 33.999
+                      15.993 C 33.999 17.06 33.576 18.083 32.824 18.839 C 32.453
+                      19.212 32.012 19.509 31.526 19.711 C 31.04 19.914 30.519
+                      20.018 29.992 20.019 C 29.199 20.019 28.425 19.783 27.766
+                      19.341 C 27.107 18.898 26.593 18.27 26.29 17.535 C 25.987
+                      16.799 25.908 15.991 26.063 15.21 C 26.217 14.43 26.599
+                      13.713 27.159 13.148 C 27.718 12.585 28.432 12.201 29.21
+                      12.046 C 29.988 11.89 30.794 11.97 31.526 12.275 C 32.259
+                      12.58 32.885 13.097 33.324 13.758 Z" fill="#6366F1" />
+              <path d="M 2.78 12.647 C 3.439 12.205 4.213 11.969 5.006
+                        11.969 C 5.533 11.97 6.054 12.075 6.539 12.278 C 7.025
+                        12.48 7.466 12.777 7.837 13.15 C 8.493 13.81 8.901
+                        14.675 8.992 15.601 C 9.083 16.527 8.852 17.455 8.337
+                        18.23 C 7.898 18.891 7.272 19.408 6.539 19.713 C 5.807
+                        20.016 5.001 20.095 4.224 19.94 C 3.446 19.785 2.733
+                        19.402 2.173 18.84 C 1.613 18.276 1.232 17.558 1.077
+                        16.778 C 0.922 15.998 1.002 15.19 1.304 14.454 C 1.607
+                        13.719 2.12 13.09 2.78 12.647 Z" fill="#6366F1" />
+            </svg>
+            <% end %>
+        </div>
+    </header>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
+        <div class="my-0 md:my-5 max-w-full flex flex-wrap px-4">
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+              <div class="flex flex-col md:w-1/2 lg:w-1/2
+                                 text-4xl md:text-5xl justify-between">
+                <div class=" mb-10  leading-none relative h-20
+                                  font-extrabold md:mb-16">
+                  <p class=" tracking-tight leading-10
+                                    text-white inline m-0">
+                    Login with Fb
+                    <br />
+                  </p>
+                  <p class="tracking-tight leading-10
+                                    text-indigo-400 inline m-0 mb-12">
+                    and phone number.
+                  </p>
+                </div>
+                <div>
+                <p class="text-xl md:text-2xl font-normal leading-7
+                                  text-gray-300 h-56 pt-4">
+                This is totorial on how to log in with Facebook and your phone number in Ruby on Rails 7 web application.
+                </p>
+              </div>
+              </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
+        
+          <div class="flex justify-center items-center md:w-1/2 lg:w-1/2 p-0 m-0
+                         ">
+          <div class="bg-white flex flex-col pt-0 pl-0 rounded:md
+                            h-[368px]">
+            <div class="px-4 py-8 bg-white gap-6 flex flex-col
+                              rounded:md">
+              <div class="gap-1 flex flex-col self-stretch pt-0
+                                pl-0 text-gray-900 text-left font-medium">
+                <p class="text-sm leading-5 h-5 ">Log
+                  in</p>
+                <div class="flex justify-center items-center
+                                  ">
+                  <div class="bg-white flex justify-center
+                                    items-center flex-grow rounded-md 
+                                     pt-[9px] pb-[9px] h-[38px]
+                                    drop-shadow-lg overflow-clip
+                                    [box-shadow:0px_0px_0px_1px_rgba(209,_213,_219,_1)_inset]
+                                    [box-shadow-width:1px]">
+                    <div class="w-5 h-5">
 
-<%= render "devise/shared/links" %>
+                      <%= button_to user_facebook_omniauth_authorize_path, data: { turbo: false } do %>
+                        <svg width="100%" height="100%" preserveAspectRatio="none" viewBox="0
+                                          0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <g clipPath="url(#clip0_5_202)">
+                            <path fillRule="evenodd" clipRule="evenodd" d="M 20 10 C 20 4.477 15.523 0 10
+                                              0 C 4.477 0 0 4.477 0 10 C 0
+                                              14.991 3.657 19.128 8.438 19.878 V
+                                              12.891 H 5.898 V 10 H 8.438 V
+                                              7.797 C 8.438 5.291 9.93 3.907
+                                              12.215 3.907 C 13.309 3.907 14.453
+                                              4.102 14.453 4.102 V 6.562 H
+                                              13.193 C 11.95 6.562 11.563 7.333
+                                              11.563 8.124 V 10 H 14.336 L
+                                              13.893 12.89 H 11.563 V 19.878 C
+                                              16.343 19.128 20 14.991 20 10 Z" fill="#6B7280" />
+                          </g>
+                          <defs>
+                            <clipPath id="clip0_5_202">
+                              <rect width="20" height="20" fill="white" />
+                            </clipPath>
+                          </defs>
+                        </svg>
+                        <% end %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+                <%= render "devise/shared/error_messages" , resource: resource %>
+                  <div class="gap-2 flex items-center
+                                           pl-0 text-gray-500
+                                            text-center font-normal ">
+                    <div class="flex-1 h-px bg-gray-300
+                                              "></div>
+                    <p class="text-sm leading-5 h-5
+                                              w-2.5">or</p>
+                    <div class="flex-1 h-px bg-gray-300
+                                            "></div>
+                  </div>
+                  <div>
+                    <%= f.text_field :phone, autofocus: true, autocomplete: "phone" , placeholder: "My Number" , class: 'bg-white flex items-center
+                                               rounded-md
+                                              text-gray-500 text-left
+                                              font-normal pt-[9px] pb-[9px]
+                                              pl-[13px] 
+                                              w-full
+                                              drop-shadow-lg overflow-clip
+                                              [box-shadow:0px_0px_0px_1px_rgba(209,_213,_219,_1)_inset]
+                                              [box-shadow-width:1px]' %>
+                  </div>
+                  <div class="mt-3 bg-indigo-600 flex
+                                              justify-center items-center
+                                              self-stretch rounded-md text-white
+                                              text-left font-medium 
+                                               pt-[9px] pb-[9px]
+                                              drop-shadow-lg overflow-clip">
+                    <%= f.submit "Log in" , class: "text-sm leading-5 h-5
+                                                " %>
+                  </div>
+            </div>
+            <div class="h-0.5 bg-gray-200"> </div>
+
+            <% end %>
+              <div class="px-4 py-6 bg-gray-50
+                                                flex justify-center items-center
+                                                text-gray-500
+                                                text-left ">
+                <div class="h-5 leading-none
+                                                  relative ">
+                  <p class="text-xs font-normal
+                                                    leading-5 inline m-0">
+                    By clicking on Log in,
+                  </p>
+                  <p class="text-xs font-bold
+                                                    leading-5 inline m-0">
+                    you accept
+                  </p>
+                  <p class="text-xs font-normal
+                                                    leading-5 inline m-0">
+                   the therms of use.
+                  </p>
+                </div>
+              </div>
+          </div>
+      </div>
+      </div>
+      </div>
+            
