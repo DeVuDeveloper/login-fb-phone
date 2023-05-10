@@ -4,17 +4,28 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
   :recoverable, :rememberable, :validatable, :trackable, :omniauthable, omniauth_providers: %i[facebook]
 
-  validates :phone, presence: true
-  validates :phone, uniqueness: {case_sensitive: false}
-  validates :phone, :format => { :with => /[0-9]{3}[- ]?[0-9]{3}[- ]?[0-9]{2}[- ]?[0-9]{2}/ }
+  validates :phone, presence: true, unless: :skip_validation?
+  validates :phone, uniqueness: {case_sensitive: false}, unless: :skip_validation?
+  validates :phone, :format => { :with => /[0-9]{3}[- ]?[0-9]{3}[- ]?[0-9]{2}[- ]?[0-9]{2}/ }, unless: :skip_validation?
 
-  after_create :send_pin!
+  after_create :update_user_verified_column_to_true
+  after_create :send_pin!, unless: Proc.new { self.provider == "facebook" }
 
   def self.from_omniauth(auth)
     find_or_create_by(provider: auth.provider, uid: auth.uid) do |user|
       user.email = auth.info.email
       user.password = Devise.friendly_token[0, 20]
     end
+  end
+
+  def update_user_verified_column_to_true
+    return unless phone.blank?
+    update_column(:verified, true)
+  end
+
+  def skip_validation?
+    return if provider.blank?
+    self.save(validate: false)
   end
 
   def perform(user)
