@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks', sessions: 'sessions'}
+  get "welcome/index"
+  get '/verify' => 'verify#edit', as: 'verify'
+  get '/verify' => 'verify#new', as: 'new_verify'
+  put '/verify' => 'verify#update', as: 'update_verify'
+  post '/verify' => 'verify#create', as: 'resend_verify'
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  root "welcome#index"
 end
