@@ -1,14 +1,16 @@
+# frozen_string_literal: true
+
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-  :recoverable, :rememberable, :validatable, :trackable, :omniauthable, omniauth_providers: %i[facebook]
+    :recoverable, :rememberable, :validatable, :trackable, :omniauthable, omniauth_providers: %i[facebook]
 
   include UserValidations
   include NonRequired
 
   after_create :update_user_verified_column_to_true
-  after_create :send_pin!, unless: Proc.new { self.provider == "facebook" }
+  after_create :send_pin!, unless: proc { provider == "facebook" }
 
   def self.from_omniauth(auth)
     find_or_create_by(provider: auth.provider, uid: auth.uid) do |user|

@@ -1,0 +1,21 @@
+{
+    "plugins": [
+        "tailwindcss"
+    ],
+    "extends": [
+        "plugin:tailwindcss/recommended"
+    ],
+    "overrides": [
+        {
+            "files": [
+                "app/**/*.erb"
+            ],
+            "parser": "@angular-eslint/template-parser"
+        }
+    ],
+    "rules": {
+        "tailwindcss/classnames-order": "error",
+        "tailwindcss/no-custom-classname": "warn",
+        "tailwindcss/no-contradicting-classname": "error"
+    }
+}

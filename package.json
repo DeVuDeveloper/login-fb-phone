@@ -1,0 +1,12 @@
+{
+  "scripts": {
+      "lint": "eslint app --ext .erb",
+      "lint:fix": "eslint ./app/**/*.erb --fix"
+      
+  },
+  "devDependencies": {
+      "eslint": "^8.38.0",
+      "eslint-plugin-tailwindcss": "^3.11.0",
+      "@angular-eslint/template-parser": "^15.2.1"
+  }
+}

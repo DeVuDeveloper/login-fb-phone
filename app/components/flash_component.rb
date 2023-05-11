@@ -4,5 +4,6 @@ class FlashComponent < ViewComponent::Base
   def initialize(notice:, alert:)
     @notice = notice
     @alert = alert
+    super
   end
 end
