@@ -79,3 +79,4 @@ gem 'omniauth-facebook'
 gem 'omniauth-rails_csrf_protection'
 gem 'nexmo'
 gem 'simple_form'
+gem "view_component"

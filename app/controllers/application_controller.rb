@@ -14,13 +14,13 @@ class ApplicationController < ActionController::Base
   
     def configure_permitted_parameters
       devise_parameter_sanitizer.permit(:sign_up) do |u|
-        u.permit(:email, :phone, :password, :password_confirmation, :uid, :provider)
+        u.permit(:email, :phone, :password, :password_confirmation, :uid, :provider, :pin, :pin_sent_at, :verified)
       end
       devise_parameter_sanitizer.permit(:sign_in) do |u|
-        u.permit(:email, :phone, :password, :password_confirmation, :uid, :provider)
+        u.permit(:email, :phone, :password, :password_confirmation, :uid, :provider, :pin, :pin_sent_at, :verified)
       end
       devise_parameter_sanitizer.permit(:account_update) do |u|
-        u.permit(:email, :phone, :password, :password_confirmation, :uid, :provider)
+        u.permit(:email, :phone, :password, :password_confirmation, :uid, :provider, :pin, :pin_sent_at, :verified)
       end
     end
   end

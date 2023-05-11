@@ -12,8 +12,11 @@
   </head>
 
   <body>
-    <p data-test="notice" class="notice"><%= notice %></p>
-    <p data-test="alert" class="alert"><%= alert %></p>
+  
+    <div class="position: fixed max-w-[100%] w-max flex-col top-4rem right-[50%] translate-x-[50%] items-center gap-5rem px-0 py-4 ">
+      <%= render(FlashComponent.new(notice: notice, alert: alert)) %>
+    </div>
+
     <%= link_to "Root", root_path %>
     <% if current_user.present? %>
       <span data-test="current-user-email"><%= current_user.phone || current_user.email %></span>

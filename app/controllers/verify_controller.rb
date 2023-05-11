@@ -2,7 +2,6 @@
 class VerifyController < ApplicationController
     skip_before_action :redirect_if_unverified
   
-  
     def new
       @user= current_user
     end
@@ -16,9 +15,7 @@ class VerifyController < ApplicationController
       @user= current_user
     end
   
-    
-    
-   def update
+    def update
      @user= current_user
         if Time.now > current_user.pin_sent_at.advance(minutes: 60)
           flash.now[:alert] = 'Your pin has expired. Please request another.'

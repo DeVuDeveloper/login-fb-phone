@@ -4,9 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
   :recoverable, :rememberable, :validatable, :trackable, :omniauthable, omniauth_providers: %i[facebook]
 
-  validates :phone, presence: true, unless: :skip_validation?
-  validates :phone, uniqueness: {case_sensitive: false}, unless: :skip_validation?
-  validates :phone, :format => { :with => /[0-9]{3}[- ]?[0-9]{3}[- ]?[0-9]{2}[- ]?[0-9]{2}/ }, unless: :skip_validation?
+  include UserValidations
+  include NonRequired
 
   after_create :update_user_verified_column_to_true
   after_create :send_pin!, unless: Proc.new { self.provider == "facebook" }
@@ -19,19 +18,7 @@ class User < ApplicationRecord
   end
 
   def update_user_verified_column_to_true
-    return unless phone.blank?
-    update_column(:verified, true)
-  end
-
-  def skip_validation?
-    return if provider.blank?
-    self.save(validate: false)
-  end
-
-  def perform(user)
-    nexmo = Nexmo::Client.new(api_key: 'cf003fcb', api_secret: 'X1Q3zcKyntxKVwTq')
-    resp = nexmo.sms.send( from: "Ruby", to: user.phone, text: user.pin.to_s)
-    user.touch(:pin_sent_at)
+    UpdateUserJob.perform_now(self)
   end
 
   def reset_pin!
@@ -45,27 +32,6 @@ class User < ApplicationRecord
   def send_pin!
     reset_pin!
     unverify!
-    self.perform(self)
-  end
-
- def email_required?
-    false
-  end
-
-  def email_changed?
-    false
-  end
-
-  def will_save_change_to_email?
-    false
-  end
-
-  protected
-
-  def password_required?
-    false
-  end
-  def password_confirmation_required?
-    false
+    SendPinJob.perform_now(self)
   end
 end
