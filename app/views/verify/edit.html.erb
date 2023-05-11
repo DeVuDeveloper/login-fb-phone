@@ -98,7 +98,7 @@
              <%= simple_form_for @user,  url: verify_path, method: :put, data: { turbo: false } do |f| %>
               <div class='w-full bg-white inline-flex items-center self-stretch rounded-md text-gray-500 text-left font-normal pl-[13px] pr-[13px] pt-[9px] pb-[9pxview-source:http://localhost:3000/users/sign_up] drop-shadow-lg overflow-clip font-[Inter] [box-shadow:0px_0px_0px_1px_rgba(209,_213,_219,_1)_inset] [box-shadow-width:1px]'>
         
-               <%= f.text_field :pin, autofocus: true, autocomplete: "pin", value: "", label: false, placeholder: "Enter code", class: "text-base leading-6 m-0" %>
+               <%= f.text_field :pin, autofocus: true, autocomplete: "pin", value: @user.pin, label: false, placeholder: "Enter code", class: "text-base leading-6 m-0" %>
               </div>
             <div class='w-full bg-indigo-600 inline-flex justify-center items-center self-stretch rounded-md text-white text-left font-medium pl-[17px] pr-[17px] pt-[9px] pb-[9px] drop-shadow-lg overflow-clip font-[Inter]'>
                <%= f.submit "Verify your number", class: "text-sm leading-5 m-0"%>
