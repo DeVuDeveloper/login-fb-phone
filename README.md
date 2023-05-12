@@ -134,26 +134,6 @@ localhost:3000
 
 You can paste or type it on url bar
 
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-<!-- ROADMAP -->
-
-### Roadmap
-
-- [x] Set up the repository/repositories on GitHub and use Gitflow.
-- [x] Create new rails app
-- [x] A simple CRUD controller with Rails
-- [x] Turbo Drive
-- [x] Turbo Frames and Turbo Stream templates
-- [x] Turbo Streams and security
-- [x] Flash messages with Hotwire
-- [x] Two ways to handle empty states with Hotwire
-- [x] Another CRUD controller with Turbo Rails
-- [x] Adding a category total with Turbo Frames
-- [x] Create README
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
 ## Built With 🔨
 
 <div align="center">
