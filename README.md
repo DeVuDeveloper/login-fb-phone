@@ -22,7 +22,8 @@
 
 ## Screenshot
 
-## ![Screenshot](app/assets/images//screenshot.png)
+## ![Screenshot](app/assets/images//screenshot.png) ![Screenshot](app/assets/images//actions.png)
+
 
 
 ## Description 🏗️
