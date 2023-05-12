@@ -29,11 +29,8 @@
 
 This is an example of how to log into a Ruby on Rails application with Facebook and a phone number, using the code sent via SMS as authentication. Ruby on rails best practices, how to use linter and how to create a good yml file for Github actions and rebasing commits are also explained.
 I wrote a detailed explanation in a tutorial that consists of three parts.
-<br />
 1. part "Login with Facebook and phone number- Ruby on Rails 7 "([here](https://medium.com/@dejanvu.developer/login-with-facebook-and-phone-number-ruby-on-rails-7-83b4e484fb35)).
-<br />
 2. part "Refactor code according to Ruby on Rails best practices" ([here](https://medium.com/@dejanvu.developer/refactor-code-according-to-ruby-on-rails-best-practices-b0adef92d851)).
-<br />
 3. part "Linter and GitHub actions" ([here](https://medium.com/@dejanvu.developer/linter-and-github-actions-fd8daa9b624b)).
 
 <p align="right">(<a href="#top">back to top</a>)</p>
