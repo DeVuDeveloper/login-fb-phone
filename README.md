@@ -20,9 +20,9 @@
   </p>
 </div>
 
-## Diagram
+## Screenshot
 
-## ![Screenshot](app/assets/images//screenshot.jpg)
+## ![Screenshot](app/assets/images//screenshot.png)
 
 
 ## Description 🏗️
