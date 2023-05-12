@@ -22,7 +22,7 @@
 
 ## Screenshot
 
-## ![Screenshot](app/assets/images//screenshot.png) ![Screenshot](app/assets/images//actions.png)
+## ![Screenshot](app/assets/images//screenshot.jpg)
 
 
 
