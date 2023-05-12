@@ -23,6 +23,20 @@ jobs:
           npm install
       - name: Standard Report
         run: bundle exec standardrb
+  eslint:
+    name: Tailwind CSS
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "18.x"
+      - name: Setup Tailwnd CSS
+        run: |
+          npm install --save-dev eslint  eslint-plugin-tailwindcss @angular-eslint/template-parser
+          [ -f .eslintrc ]
+      - name: Tailwind CSS Report
+        run: npm run lint .
   nodechecker:
     name: node_modules checker
     runs-on: ubuntu-22.04
